@@ -1,0 +1,7 @@
+Name,Roll,Sleep time,StudyTime,Noise,password,Sleep time_enc,Cluster,Room
+Asma,101,early,evening,low,101,0.0,0,101
+Dimple,102,late,night,medium,102,1.0,1,103
+Ishpreet,103,early,evening,low,103,0.0,0,101
+Jiya,104,late,night,high,104,1.0,1,103
+Priya,105,early,evening,medium,105,0.0,0,102
+Riya,106,late,night,high,106,1.0,2,104

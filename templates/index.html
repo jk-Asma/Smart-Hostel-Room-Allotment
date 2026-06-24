@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Hostel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+
+<style>
+    /* About Us button style */
+    .about-link {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.55);
+        padding: 10px 18px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .about-link:hover {
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+    }
+</style>
+
+</head>
+<body>
+<!--a href="{{ url_for('about') }}" class="btn btn-info">About Us</a> -->
+
+<!-- TOP RIGHT ABOUT US -->
+<a href="{{ url_for('about') }}"  class="about-link"><i class="bi bi-info-circle"></i> About Us</a>
+
+<div class="container-fluid p-0">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/images/hostel1.jpg" class="d-block w-100" alt="Hostel 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Welcome to Smart Hostel</h2>
+          <p>Efficient room allocation at your fingertips</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="/static/images/hostel2.jpg" class="d-block w-100" alt="Hostel 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Comfortable Living</h2>
+          <p>Choose your preferences, we handle the rest</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="/static/images/hostel3.jpg" class="d-block w-100" alt="Hostel 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Smart & Safe</h2>
+          <p>Your perfect roommate, intelligently assigned</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container text-center mt-4">
+  <a href="/admin_login" class="btn btn-primary btn-lg m-2"><i class="bi bi-person-badge"></i> Admin Login</a>
+  <a href="/student" class="btn btn-success btn-lg m-2"><i class="bi bi-person"></i> Student Login</a>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  © 2025 Smart Hostel. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

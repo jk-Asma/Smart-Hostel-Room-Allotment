@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Smart Hostel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        min-height: 100vh;
+        background: url("{{ url_for('static', filename='images/hostel1.jpg') }}") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: flex-end;
+        background: rgba(0,0,0,0.4);
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #ffd700;
+        font-weight: 500;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    header a:hover {
+        color: #ffffff;
+    }
+
+    .content {
+        margin-top: 80px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.85);
+        color: #333;
+        padding: 40px;
+        border-radius: 18px;
+        max-width: 700px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        margin-bottom: 50px;
+    }
+
+    .project-card h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #0d6efd;
+    }
+
+    .project-card p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .slider-container {
+        width: 90%;
+        max-width: 1100px;
+        overflow: hidden;
+        border-radius: 18px;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .card {
+        min-width: 100%;
+        padding: 35px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        color: #333;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card h2 {
+        margin-bottom: 15px;
+        font-size: 26px;
+        color: #0d6efd;
+    }
+
+    .card p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background: rgba(0,0,0,0.5);
+        color: #ffd700;
+        margin-top: 50px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="{{ url_for('index') }}">Home</a>
+</header>
+
+<div class="content">
+
+    <!-- Project Section -->
+    <div class="project-card">
+        <h2>Our Minor Project</h2>
+        <p>
+            This project focuses on <b>automated intelligent room allotment</b> using  
+            <b>Agglomerative Clustering</b> — a superior hierarchical grouping method.
+            <br><br>
+            Unlike simple K-Means clustering, Agglomerative Clustering forms natural clusters  
+            by progressively merging similar data points, giving more fairness and accuracy.
+            <br><br>
+            The goal is to reduce manual work and provide a smart, efficient hostel allocation system.
+        </p>
+    </div>
+
+    <!-- Teammates Slider -->
+    <div class="slider-container">
+        <div class="slider" id="slider">
+
+            <div class="card">
+                <h2>Asma — Project Creator</h2>
+                <p>
+                    I am Asma, the mind behind the idea of using  
+                    <b>Agglomerative Clustering</b> to make room allotment smarter.
+                    <br><br>
+                    Worked on designing the concept, implementing logic, and crafting the user experience.
+                    <br><br>
+                    Passionate about intelligent algorithms, clean UI, and solving real-world student problems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Dimpal</h2>
+                <p>
+                    A focused and supportive teammate who contributed  
+                    to research, preference data organization, and documentation.
+                    <br><br>
+                    Always brings new ideas and ensures clarity in workflow.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Ishpreet Kaur</h2>
+                <p>
+                    Ishpreet helped with testing, debugging, and refining modules  
+                    to ensure smooth working of the system.
+                    <br><br>
+                    Also contributed to UI improvements and user experience refinement.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Smart Hostel. All rights reserved.
+</footer>
+
+<script>
+    let index = 0;
+    const slider = document.getElementById("slider");
+    const totalCards = slider.children.length;
+
+    function showCard() {
+        slider.style.transform = "translateX(" + (index * -100) + "%)";
+    }
+
+    function nextCard() {
+        index = (index + 1) % totalCards;
+        showCard();
+    }
+
+    // Auto-slide every 2.5 seconds
+    let autoSlide = setInterval(nextCard, 2500);
+
+    // Optional: Pause on hover
+    slider.addEventListener("mouseenter", () => clearInterval(autoSlide));
+</script>
+
+</body>
+</html>
